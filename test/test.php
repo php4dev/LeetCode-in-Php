@@ -4,7 +4,7 @@
     {
         public function testExample()
         {
-            $result = Example\Example::go();
+            $result Algorithms\Example::go();
         }
     }
 ?>  

@@ -1,4 +1,4 @@
-<?php namespace Example;
+<?php namespace Algorithms;
 class Example
 {
     public static function go()
