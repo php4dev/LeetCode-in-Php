@@ -1,10 +1,10 @@
 {
-  "name": "phpunit-travis-ci-coverage-example",
+  "name": "LeetCode-in-Php",
   "license": "MIT",
   "authors": [
     {
-      "name": "ankurk91",
-      "homepage": "https://ankurk91.github.io/"
+      "name": "javadev",
+      "homepage": "https://github.com/php4dev/LeetCode-in-Php"
     }
   ],
   "require": {
