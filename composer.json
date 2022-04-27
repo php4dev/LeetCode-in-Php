@@ -1,5 +1,5 @@
 {
-  "name": "javadev/LeetCode_in_Php",
+  "name": "javadev/leetcode_in_php",
   "description": "PHP solutions for leet code problems",
   "license": "MIT",
   "autoload": {
