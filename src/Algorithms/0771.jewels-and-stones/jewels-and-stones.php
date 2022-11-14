@@ -6,10 +6,10 @@ class Solution {
     * @return Integer
     */
     function numJewelsInStones($jewels, $stones) {
-        $counter = 0;
-        for ($i = 0; $i < strlen($jewels); $i++) {
-            $counter += substr_count($stones, $jewels[$i]);
+        $jewelsArr = str_split($jewels);
+        foreach($jewelsArr as $jewel) {
+            $b += substr_count($stones, $jewel);
         }
-        return $counter;
+        return $b;
     }
 }
