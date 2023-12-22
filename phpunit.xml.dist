@@ -17,7 +17,7 @@
 
     <filter>
         <whitelist>
-            <directory suffix=".php">./src</directory>
+            <directory suffix=".php">./src/Algorithms/s0001_two_sum</directory>
         </whitelist>
     </filter>
 </phpunit>
