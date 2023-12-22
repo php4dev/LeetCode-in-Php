@@ -7,17 +7,15 @@ class Solution {
      * @param Integer $target
      * @return Integer[]
      */
-    function twoSum($nums, $target) {
-        $map = [];
-        for ($i = 0; $i < count($nums); $i++) {
-            $map[$nums[$i]] = $i;
-        }
-        for ($i = 0; $i < count($nums); $i++) {
+    public function twoSum($nums, $target) {
+        $ind = [];
+        for ($i = 0; $i < count($nums); ++$i) {
             $complement = $target - $nums[$i];
-            if (array_key_exists($complement, $map) && $map[$complement] != $i) {
-                return [$i, $map[$complement] ];
+            if (array_key_exists($complement, $ind)) {
+                return [$ind[$complement], $i];
             }
+            $ind[$nums[$i]] = $i;
         }
-        throw new IllegalArgumentException("No two sum solution");      
+        return [-1, -1];
     }
 }
