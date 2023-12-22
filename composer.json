@@ -4,7 +4,12 @@
   "license": "MIT",
   "autoload": {
     "psr-4": {
-      "Javadev\\LeetCodePhp\\": ""
+      "\\": "src/Algorithms/s0001_two_sum"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "\\": "tests"
     }
   },
   "authors": [

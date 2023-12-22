@@ -9,6 +9,14 @@
         convertWarningsToExceptions="true"
         processIsolation="false"
         stopOnFailure="false">
+    <coverage includeUncoveredFiles="true" processUncoveredFiles="true">
+        <include>
+            <directory suffix=".php">./tests</directory>
+        </include>
+        <report>
+            <clover outputFile="build/logs/clover.xml"/>
+        </report>
+    </coverage>
     <testsuites>
         <testsuite name="Test Suite">
             <directory suffix=".php">./tests</directory>
@@ -17,7 +25,7 @@
 
     <filter>
         <whitelist>
-            <directory suffix=".php">./src</directory>
+            <directory suffix=".php">./tests</directory>
         </whitelist>
     </filter>
 </phpunit>
