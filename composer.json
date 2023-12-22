@@ -4,7 +4,7 @@
   "license": "MIT",
   "autoload": {
     "psr-4": {
-      "\\": "Algorithms/s0001_two_sum"
+      "\\": "Algorithms/s0001_two_sum/"
     }
   },
   "autoload-dev": {
