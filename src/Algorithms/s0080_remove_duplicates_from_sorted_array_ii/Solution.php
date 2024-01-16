@@ -1,3 +1,5 @@
+<?php
+
 class Solution {
 
     /**
@@ -5,7 +7,8 @@ class Solution {
      * @return Integer
      */
     function removeDuplicates(&$nums) {
-        $j = 0; $c = 0;
+        $j = 0;
+        $c = 0;
         for ($i = 1; $i < count($nums); $i++) {
             if ($nums[$i] == $nums[$j]) {
                 $c++;
@@ -21,6 +24,6 @@ class Solution {
             $nums[$i] = $nums[$j];
             $nums[$j] = $tmp;
         }
-        return $j+1;
+        return $j + 1;
     }
 }

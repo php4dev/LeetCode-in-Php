@@ -1,3 +1,5 @@
+<?php
+
 class Solution {
 
     /**
@@ -7,8 +9,8 @@ class Solution {
      */
     function removeElement(&$nums, $val) {
         $start = 0;
-        for($i = 0; $i < count($nums); $i++){
-            if($nums[$i] != $val){
+        for ($i = 0; $i < count($nums); $i++) {
+            if ($nums[$i] != $val) {
                 $nums[$start] = $nums[$i];
                 $start++;
             }

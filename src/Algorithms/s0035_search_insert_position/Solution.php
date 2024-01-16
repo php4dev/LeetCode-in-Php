@@ -1,3 +1,5 @@
+<?php
+
 class Solution {
 
     /**
@@ -6,7 +8,7 @@ class Solution {
      * @return Integer
      */
     function searchInsert($nums, $target) {
-        for($i = 0; $i < count($nums) && $nums[$i] <= $target; $i++) {
+        for ($i = 0; $i < count($nums) && $nums[$i] <= $target; $i++) {
             if ($nums[$i] == $target) {
                 return $i;
             }

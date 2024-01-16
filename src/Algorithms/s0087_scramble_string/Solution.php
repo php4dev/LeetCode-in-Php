@@ -1,3 +1,5 @@
+<?php
+
 class Solution {
 
     /**
@@ -10,7 +12,7 @@ class Solution {
         if (strlen($s1) != strlen($s2)) return false;
         return self::helper($s1, $s2, 0, 0, strlen($s1));
     }
-    
+
     function helper($cs1, $cs2, $s1, $s2, $len) {
         if ($len == 0) return true;
         $same = true;

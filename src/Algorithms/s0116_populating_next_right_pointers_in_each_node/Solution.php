@@ -1,3 +1,5 @@
+<?php
+
 /*
 // Definition for a Node.
 class Node {
@@ -18,6 +20,7 @@ class Node {
     }
 }
 */
+
 class Solution {
 
     /**
@@ -25,18 +28,18 @@ class Solution {
      * @return Node
      */
     function connect($root) {
-        if($root==null){
+        if ($root == null) {
             return null;
-        }     
-        
-        if($root->left!=null && $root->right!=null){
+        }
+
+        if ($root->left != null && $root->right != null) {
             $root->left->next = $root->right;
         }
-        
-        if($root->next!=null && $root->right!=null){
-            $root->right->next=$root->next->left;
+
+        if ($root->next != null && $root->right != null) {
+            $root->right->next = $root->next->left;
         }
-        
+
         self::connect($root->left);
         self::connect($root->right);
         return $root;

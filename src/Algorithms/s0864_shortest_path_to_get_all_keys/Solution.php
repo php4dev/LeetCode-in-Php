@@ -1,7 +1,10 @@
+<?php
+
 class Status {
     var $key;
     var $i;
     var $j;
+
     function __construct($key, $i, $j) {
         $this->key = $key;
         $this->i = $i;
@@ -27,7 +30,7 @@ class Solution {
                 if ($c >= 'A' && $c <= 'F') {
                     $success |= 1 << (ord($c) - ord('A'));
                 }
-                
+
                 if ($c == '@') {
                     $startI = $i;
                     $startJ = $j;
@@ -57,11 +60,11 @@ class Solution {
                         if ($c >= 'a' && $c <= 'f') {
                             $nextKey = $key | (1 << (ord($c) - ord('a')));
                         }
-                        
+
                         if ($c >= 'A' && $c <= 'F') {
                             if (($nextKey & (1 << (ord($c) - ord('A')))) == 0) continue;
                         }
-                        
+
                         if ($path + 1 < $dist[$nextKey][$xx][$yy]) {
                             $dist[$nextKey][$xx][$yy] = $path + 1;
                             array_unshift($queue, new Status($nextKey, $xx, $yy));

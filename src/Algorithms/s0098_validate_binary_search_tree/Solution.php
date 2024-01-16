@@ -1,3 +1,5 @@
+<?php
+
 /**
  * Definition for a binary tree node.
  * class TreeNode {
@@ -16,7 +18,7 @@ class Solution {
     function isValidBST($root) {
         return self::helper($root, null, null);
     }
-    
+
     function helper($node, $min, $max) {
         if ($node == null) return true;
         if (($min != null && $node->val <= $min->val) || ($max != null && $node->val >= $max->val)) return false;

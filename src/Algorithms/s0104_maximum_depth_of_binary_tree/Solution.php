@@ -1,3 +1,5 @@
+<?php
+
 /**
  * Definition for a binary tree node.
  * class TreeNode {
@@ -14,7 +16,7 @@ class Solution {
      * @return Integer
      */
     function maxDepth($root) {
-        if($root == null) return 0;
-        return 1 + max(self::maxDepth($root->left), self::maxDepth($root->right) );   
+        if ($root == null) return 0;
+        return 1 + max(self::maxDepth($root->left), self::maxDepth($root->right));
     }
 }

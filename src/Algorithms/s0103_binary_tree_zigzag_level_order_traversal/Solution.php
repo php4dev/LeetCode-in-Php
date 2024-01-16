@@ -1,3 +1,5 @@
+<?php
+
 /**
  * Definition for a binary tree node.
  * class TreeNode {
@@ -18,12 +20,12 @@ class Solution {
         $result = [];
         $queue = [];
         if ($root != null) array_push($queue, $root);
-        while (count($queue)  > 0){
+        while (count($queue) > 0) {
             $size = count($queue);
             $list = [];
-            for ($i = 0; $i < $size; $i++){
+            for ($i = 0; $i < $size; $i++) {
                 $node = array_shift($queue);
-                if ($leftRight){
+                if ($leftRight) {
                     array_push($list, $node->val);
                 } else {
                     array_splice($list, 0, 0, $node->val);
@@ -34,7 +36,7 @@ class Solution {
             array_push($result, $list);
             $leftRight = !$leftRight;
         }
-        
-        return $result; 
+
+        return $result;
     }
 }

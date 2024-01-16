@@ -1,3 +1,5 @@
+<?php
+
 class Solution {
 
     /**
@@ -9,23 +11,23 @@ class Solution {
         sort($nums);
         $min = 2147483647;
         $res = 0;
-        for($i=2;$i<count($nums);$i++){
-            $l=0;$r=$i-1;
+        for ($i = 2; $i < count($nums); $i++) {
+            $l = 0;
+            $r = $i - 1;
 
-            while($l<$r){
-                $sum = $nums[$l]+$nums[$r]+$nums[$i];
-                if($sum == $target){
+            while ($l < $r) {
+                $sum = $nums[$l] + $nums[$r] + $nums[$i];
+                if ($sum == $target) {
                     return $target;
                 }
-                $diff= abs($target-$sum);
-                if($diff<$min){
+                $diff = abs($target - $sum);
+                if ($diff < $min) {
                     $min = $diff;
                     $res = $sum;
                 }
-                if($sum<$target){
+                if ($sum < $target) {
                     $l++;
-                }
-                else{
+                } else {
                     $r--;
                 }
             }

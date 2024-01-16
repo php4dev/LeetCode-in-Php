@@ -1,3 +1,5 @@
+<?php
+
 class Solution {
 
     /**
@@ -6,7 +8,8 @@ class Solution {
      * @return Integer
      */
     function search($nums, $target) {
-        $low = 0; $high = count($nums) - 1;
+        $low = 0;
+        $high = count($nums) - 1;
         while ($low <= $high) {
             $m = intval(($low + $high) / 2);
             if ($nums[$m] == $target) {

@@ -1,3 +1,5 @@
+<?php
+
 /**
  * Definition for a binary tree node.
  * class TreeNode {
@@ -14,11 +16,11 @@ class Solution {
      * @return Integer
      */
     function minDepth($root) {
-        if($root == null)
+        if ($root == null)
             return 0;
-        else if($root->left == null)
+        else if ($root->left == null)
             return self::minDepth($root->right) + 1;
-        else if($root->right == null)
+        else if ($root->right == null)
             return self::minDepth($root->left) + 1;
         else
             return min(self::minDepth($root->left) + 1, self::minDepth($root->right) + 1);

@@ -1,3 +1,5 @@
+<?php
+
 /**
  * Definition for a binary tree node.
  * class TreeNode {
@@ -19,23 +21,20 @@ class Solution {
         $temp = [];
 
         $curSum = 0;
-        self::pathSumUtil($root, $sum, $curSum, $res,$temp);
+        self::pathSumUtil($root, $sum, $curSum, $res, $temp);
 
         return $res;
     }
 
-    function pathSumUtil($root, $sum, $curSum, &$res, &$temp)
-    {
+    function pathSumUtil($root, $sum, $curSum, &$res, &$temp) {
 
-        if($root==null)
+        if ($root == null)
             return;
         array_push($temp, $root->val);
-        if($root->left==null && $root->right==null)
-        {
+        if ($root->left == null && $root->right == null) {
             $curSum = $curSum + $root->val;
 
-            if($sum==$curSum)
-            {   
+            if ($sum == $curSum) {
                 array_push($res, $temp);
             }
         }

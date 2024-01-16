@@ -1,3 +1,5 @@
+<?php
+
 /**
  * Definition for a singly-linked list.
  * class ListNode {
@@ -14,8 +16,8 @@ class Solution {
      */
     function swapPairs($head) {
         $cur = $head;
-        while ($cur != null && $cur->next != null){
-           
+        while ($cur != null && $cur->next != null) {
+
             $temp = $cur->val;
             $cur->val = $cur->next->val;
             $cur->next->val = $temp;

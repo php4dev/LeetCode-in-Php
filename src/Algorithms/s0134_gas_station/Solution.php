@@ -1,3 +1,5 @@
+<?php
+
 class Solution {
 
     /**
@@ -9,14 +11,14 @@ class Solution {
         $sum = 0;
         $min = 2147483647;
         $minIndex = 0;
-        for($i=0; $i<count($gas); $i++){
-            $sum += $gas[$i]-$cost[$i];
-            if($sum<$min){
+        for ($i = 0; $i < count($gas); $i++) {
+            $sum += $gas[$i] - $cost[$i];
+            if ($sum < $min) {
                 $min = $sum;
                 $minIndex = $i;
             }
         }
-        if($sum<0) return -1;
-        return $minIndex==count($gas)-1 ?  0 : $minIndex + 1;
+        if ($sum < 0) return -1;
+        return $minIndex == count($gas) - 1 ? 0 : $minIndex + 1;
     }
 }

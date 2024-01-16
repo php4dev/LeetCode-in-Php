@@ -1,3 +1,5 @@
+<?php
+
 class Solution {
 
     var $s;
@@ -30,7 +32,7 @@ class Solution {
         }
         $nextDigit = ord($this->s[$nextIdx]) - ord('0');
         $possibleNum = $num == -1 ? $nextDigit : $num * 10 + $nextDigit;
-        if ($possibleNum <= 255 ) {
+        if ($possibleNum <= 255) {
             //trying increase this position next (if it's not 0)
             if ($possibleNum > 0 || ($possibleNum == 0 && $nextIdx == strlen($this->s) - 1))
                 self::helper($possibleNum, $nextIdx + 1, $partIdx);
@@ -40,11 +42,12 @@ class Solution {
             $this->parts[$partIdx] = -1;
         }
     }
+
     function parseIp() {
         $sb = "";
         for ($i = 0; $i < count($this->parts); $i++) {
             $sb .= $this->parts[$i];
-            if ( $i < count($this->parts) - 1)
+            if ($i < count($this->parts) - 1)
                 $sb .= '.';
         }
         array_push($this->res, $sb);

@@ -1,16 +1,18 @@
+<?php
+
 class Solution {
 
     function minimumTotalOfLayer(
         $triangle, &$cache, $layer, $totalLayerSize) {
         $currentLayer = $triangle[$layer];
         if ($layer == $totalLayerSize - 1) {
-          for ($i = 0; $i < $totalLayerSize; $i++) $cache[$i] = $currentLayer[$i];
-          return;
+            for ($i = 0; $i < $totalLayerSize; $i++) $cache[$i] = $currentLayer[$i];
+            return;
         }
         self::minimumTotalOfLayer($triangle, $cache, $layer + 1, $totalLayerSize);
         $currentLayerSize = count($currentLayer);
         for ($i = 0; $i < $currentLayerSize; $i++) {
-          $cache[$i] = min($cache[$i], $cache[$i + 1]) + $currentLayer[$i];
+            $cache[$i] = min($cache[$i], $cache[$i + 1]) + $currentLayer[$i];
         }
     }
 

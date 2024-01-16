@@ -1,3 +1,5 @@
+<?php
+
 /**
  * Definition for an interval.
  * class Interval {
@@ -25,12 +27,12 @@ class Solution {
     function merge($intervals) {
         usort($intervals, 'self::cmp');
         $mergedIntervals = [];
-        
+
         for ($i = 0; $i < count($intervals);) {
             $interval = $intervals[$i];
             $start = $interval->start;
             $end = $interval->end;
-            
+
             while (++$i < count($intervals) && $intervals[$i]->start <= $end) {
                 if ($end < $intervals[$i]->end) {
                     $end = $intervals[$i]->end;
@@ -38,7 +40,7 @@ class Solution {
             }
             array_push($mergedIntervals, new Interval($start, $end));
         }
-        
+
         return $mergedIntervals;
     }
 }

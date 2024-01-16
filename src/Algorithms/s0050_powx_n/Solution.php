@@ -1,3 +1,5 @@
+<?php
+
 class Solution {
 
     /**
@@ -6,22 +8,22 @@ class Solution {
      * @return Float
      */
     function myPow($x, $n) {
-        if($x == 1) {
+        if ($x == 1) {
             return $x;
         }
-        if($x == -1) {
+        if ($x == -1) {
             return $n % 2 == 0 ? 1 : -1;
         }
-        if($n == 0) {
+        if ($n == 0) {
             return 1;
         }
-        if($n < 0) {
-            $x = 1/$x;
+        if ($n < 0) {
+            $x = 1 / $x;
             $n = abs($n);
         }
         return self::helper($x, $n);
     }
-    
+
     function helper($x, $n) {
         if ($x == 0) {
             return 0;
@@ -32,12 +34,12 @@ class Solution {
         if ($n == 0) {
             return 1;
         }
-        
-        $output = self::helper($x, $n/2);
-        
-        if($n % 2 == 0) {
+
+        $output = self::helper($x, $n / 2);
+
+        if ($n % 2 == 0) {
             return $output * $output;
-        }else {
+        } else {
             return $output * $output * $x;
         }
     }

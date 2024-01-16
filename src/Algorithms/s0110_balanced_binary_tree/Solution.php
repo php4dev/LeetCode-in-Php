@@ -1,3 +1,5 @@
+<?php
+
 /**
  * Definition for a binary tree node.
  * class TreeNode {
@@ -14,17 +16,17 @@ class Solution {
      * @return Boolean
      */
     function isBalanced($root) {
-        return $root == null || self::checkDepth($root) != -1;      
+        return $root == null || self::checkDepth($root) != -1;
     }
 
-	function checkDepth($root) {
+    function checkDepth($root) {
         $lh = $root->left == null ? 0 : self::checkDepth($root->left);
         $rh = $root->right == null ? 0 : self::checkDepth($root->right);
-		// Left subtree or right subtree is unbalanced
+        // Left subtree or right subtree is unbalanced
         if ($lh == -1 || $rh == -1) return -1;
-		// This tree is unbalanced
+        // This tree is unbalanced
         if ($lh - $rh > 1 || $lh - $rh < -1) return -1;
-		// Return depth of this tree
+        // Return depth of this tree
         return max($lh, $rh) + 1;
     }
 }

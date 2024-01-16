@@ -1,3 +1,5 @@
+<?php
+
 class Solution {
 
     /**
@@ -7,7 +9,10 @@ class Solution {
     function threeSum($nums) {
         $res = [];
         sort($nums);
-        $i = 0; $j = 0; $n = count($nums); $k = $n - 1;
+        $i = 0;
+        $j = 0;
+        $n = count($nums);
+        $k = $n - 1;
         if ($k < 2 || $nums[$k] < 0) {
             return $res;
         }
@@ -24,15 +29,15 @@ class Solution {
                 }
                 if ($nums[$j] + $nums[$k] == $target) {
                     $res[] = [$nums[$i], $nums[$j], $nums[$k]];
-                    while($j < $k && $nums[$j] == $nums[++$j]);
-                    while($j < $k && $nums[$k] == $nums[--$k]);
+                    while ($j < $k && $nums[$j] == $nums[++$j]) ;
+                    while ($j < $k && $nums[$k] == $nums[--$k]) ;
                 } else if ($nums[$j] + $nums[$k] > $target) {
                     $k--;
                 } else {
                     $j++;
                 }
             }
-            while ($i < $n - 2 && $nums[$i] == $nums[++$i]);
+            while ($i < $n - 2 && $nums[$i] == $nums[++$i]) ;
         }
         return $res;
     }

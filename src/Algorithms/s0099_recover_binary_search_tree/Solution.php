@@ -1,3 +1,5 @@
+<?php
+
 /**
  * Definition for a binary tree node.
  * class TreeNode {
@@ -15,7 +17,10 @@ class Solution {
      */
     function recoverTree($root) {
         $stack = [];
-        $current = $root; $prev = null; $first = null; $second = null;
+        $current = $root;
+        $prev = null;
+        $first = null;
+        $second = null;
         while ($current != null || count($stack) != 0) {
             while ($current != null) {
                 array_push($stack, $current);
@@ -25,10 +30,13 @@ class Solution {
             if ($prev != null && $current->val < $prev->val) {
                 if ($first == null) $first = $prev;
                 $second = $current;
-            } 
-            $prev = $current; $current = $current->right;
+            }
+            $prev = $current;
+            $current = $current->right;
         }
         // swap
-        $temp = $first->val; $first->val = $second->val; $second->val = $temp;        
+        $temp = $first->val;
+        $first->val = $second->val;
+        $second->val = $temp;
     }
 }

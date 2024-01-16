@@ -1,3 +1,5 @@
+<?php
+
 /**
  * Definition for a singly-linked list.
  * class ListNode {
@@ -6,6 +8,7 @@
  *     function __construct($val) { $this->val = $val; }
  * }
  */
+
 /**
  * Definition for a binary tree node.
  * class TreeNode {
@@ -30,7 +33,7 @@ class Solution {
 
         return self::helper($lst, 0, count($lst) - 1);
     }
-    
+
     function helper($lst, $start, $end) {
         if ($start > $end) {
             return null;

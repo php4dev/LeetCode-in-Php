@@ -1,3 +1,5 @@
+<?php
+
 /**
  * Definition for a binary tree node.
  * class TreeNode {
@@ -15,21 +17,21 @@ class Solution {
      */
     function sortedArrayToBST($num) {
         /*1. Set up recursion*/
-        return self::makeTree($num, 0, count($num)-1);
+        return self::makeTree($num, 0, count($num) - 1);
     }
-    
-    function makeTree($num, $left, $right){
+
+    function makeTree($num, $left, $right) {
         /*2. left as lowest# can't be greater than right*/
-        if($left>$right) return null;
-        
+        if ($left > $right) return null;
+
         /*3. Set median# as node*/
-        $mid = intval(($left+$right)/2);
+        $mid = intval(($left + $right) / 2);
         $midNode = new TreeNode($num[$mid]);
-        
+
         /*4. Set mid node's kids*/
-        $midNode->left = self::makeTree($num, $left, $mid-1);
-        $midNode->right = self::makeTree($num, $mid+1, $right);
-        
+        $midNode->left = self::makeTree($num, $left, $mid - 1);
+        $midNode->right = self::makeTree($num, $mid + 1, $right);
+
         /*5. Sends node back || Goes back to prev node*/
         return $midNode;
     }
