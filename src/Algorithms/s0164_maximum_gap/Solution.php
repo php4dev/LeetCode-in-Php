@@ -1,3 +1,5 @@
+<?php
+
 class Bucket {
     var $leftClose;
     var $rightOpen;
@@ -17,7 +19,7 @@ class Solution {
      * @return Integer
      */
     function maximumGap($nums) {
-        if ($nums==null || count($nums)<2) {
+        if ($nums == null || count($nums) < 2) {
             return 0;
         }
 
@@ -25,16 +27,16 @@ class Solution {
         $max = $nums[0];
         $min = $nums[0];
         foreach ($nums as $num) {
-            $max = $max<$num ? $num : $max;
-            $min = $min>$num ? $num : $min;
+            $max = $max < $num ? $num : $max;
+            $min = $min > $num ? $num : $min;
         }
 
         // the size of bucket must > 1
         $bucketSize = intval(max(1, ($max - $min) / (count($nums) - 1)));
-        $bucketNum = intval(($max-$min) / $bucketSize + 1);
+        $bucketNum = intval(($max - $min) / $bucketSize + 1);
 
         $buckets = array_fill(0, $bucketNum, null);
-        for ($i=0; $i<count($buckets); $i++) {
+        for ($i = 0; $i < count($buckets); $i++) {
             $buckets[$i] = new Bucket();
         }
 
@@ -54,11 +56,11 @@ class Solution {
 
         $maxGap = 0;
         $preRightOpen = $buckets[0]->rightOpen;
-        for ($i=1; $i<count($buckets); $i++) {
+        for ($i = 1; $i < count($buckets); $i++) {
             if ($buckets[$i]->usedFlag == false) {
                 continue;
             }
-            $maxGap = max($maxGap, $buckets[$i]->leftClose-$preRightOpen);
+            $maxGap = max($maxGap, $buckets[$i]->leftClose - $preRightOpen);
             $preRightOpen = $buckets[$i]->rightOpen;
         }
 

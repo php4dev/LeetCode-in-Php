@@ -1,3 +1,5 @@
+<?php
+
 /**
  * Definition for a singly-linked list.
  * class ListNode {
@@ -13,9 +15,10 @@ class Solution {
      * @return ListNode
      */
     function insertionSortList($head) {
-        if ($head == null || $head->next == null ) return $head;
+        if ($head == null || $head->next == null) return $head;
         $tmp;
-        $k; $z;
+        $k;
+        $z;
         for ($start = $head; $start->next != null; $start = $start->next) {
             $tmp = $start->next;
             $k = $tmp->val;

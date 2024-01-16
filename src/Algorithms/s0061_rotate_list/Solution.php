@@ -1,3 +1,5 @@
+<?php
+
 /**
  * Definition for a singly-linked list.
  * class ListNode {
@@ -14,11 +16,11 @@ class Solution {
      * @return ListNode
      */
     function rotateRight($head, $k) {
-        if($head == null){
+        if ($head == null) {
             return $head;
         }
         $k = ($k == 0) ? 0 : $k % self::getLen($head);
-        if($k == 0){
+        if ($k == 0) {
             return $head;
         }
         $head1 = self::reverse(null, $head);
@@ -26,7 +28,7 @@ class Solution {
         $dummyHead->next = $head1;
         $cur = $dummyHead->next;
         $pre = $dummyHead;
-        while($k > 0){
+        while ($k > 0) {
             $pre = $cur;
             $cur = $cur->next;
             $k--;
@@ -35,18 +37,20 @@ class Solution {
         $head2 = self::reverse(null, $cur);
         return self::reverse($head2, $head1);
     }
-    function getLen($head){
+
+    function getLen($head) {
         $cnt = 0;
-        while($head != null){
+        while ($head != null) {
             $cnt++;
             $head = $head->next;
         }
         return $cnt;
     }
-    function reverse($pre,$head) {
+
+    function reverse($pre, $head) {
         $tmp;
         $cur = $head;
-        while($cur != null) {
+        while ($cur != null) {
             $tmp = $cur->next;
             $cur->next = $pre;
             $pre = $cur;

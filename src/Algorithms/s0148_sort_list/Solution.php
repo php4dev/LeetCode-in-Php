@@ -1,3 +1,5 @@
+<?php
+
 /**
  * Definition for a singly-linked list.
  * class ListNode {
@@ -18,7 +20,7 @@ class Solution {
         $slow = $head;
         $fast = $head;
         $pre = $slow;
-        while($fast != null && $fast->next != null) {
+        while ($fast != null && $fast->next != null) {
             $pre = $slow;
             $slow = $slow->next;
             $fast = $fast->next->next;
@@ -30,7 +32,7 @@ class Solution {
         $cur = $res;
         while ($first != null || $second != null) {
             if ($first == null) {
-                $cur->next= $second;
+                $cur->next = $second;
                 break;
             } else if ($second == null) {
                 $cur->next = $first;

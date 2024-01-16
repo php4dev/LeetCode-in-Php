@@ -1,3 +1,5 @@
+<?php
+
 class Solution {
 
     /**
@@ -14,7 +16,7 @@ class Solution {
             }
         }
         for ($i = 0; $i < count($matrix); $i++) {
-            $start  = 0;
+            $start = 0;
             $end = count($matrix[$i]) - 1;
             while ($start < $end) {
                 $temp = $matrix[$i][$start];
@@ -23,6 +25,6 @@ class Solution {
                 $start++;
                 $end--;
             }
-        } 
+        }
     }
 }

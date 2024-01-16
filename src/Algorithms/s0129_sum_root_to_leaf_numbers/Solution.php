@@ -1,3 +1,5 @@
+<?php
+
 /**
  * Definition for a binary tree node.
  * class TreeNode {
@@ -14,21 +16,21 @@ class Solution {
      * @return Integer
      */
     function sumNumbers($root) {
-        return self::getSum($root,0);
-        
+        return self::getSum($root, 0);
+
     }
-    
-    function getSum($root, $sum){
-        
-        if($root == null)
+
+    function getSum($root, $sum) {
+
+        if ($root == null)
             return 0;
-        
+
         $sum = $sum * 10 + $root->val;
-        
-        if($root->left == null && $root->right == null)
+
+        if ($root->left == null && $root->right == null)
             return $sum;
-        
-        return self::getSum($root->left,$sum) + self::getSum($root->right,$sum);
-        
+
+        return self::getSum($root->left, $sum) + self::getSum($root->right, $sum);
+
     }
 }

@@ -1,3 +1,7 @@
+<?php
+
+// #Medium #String #2024_01_16_Time_10_ms_(90.40%)_Space_19.5_MB_(58.08%)
+
 class Solution {
 
     /**

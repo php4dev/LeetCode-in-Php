@@ -1,3 +1,5 @@
+<?php
+
 /**
  * Definition for a binary tree node.
  * class TreeNode {
@@ -21,6 +23,7 @@ class Solution {
         }
         return self::helper($preorder, $inorder, $map, 0, 0, count($inorder) - 1);
     }
+
     function helper($preorder, $inorder, $map, $index, $start, $end) {
         if ($index >= count($preorder) || $start > $end) {
             return null;

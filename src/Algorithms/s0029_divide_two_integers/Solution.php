@@ -1,3 +1,5 @@
+<?php
+
 class Solution {
 
     /**
@@ -11,18 +13,20 @@ class Solution {
             if ($divisor > 0) return $dividend;
             else return -$dividend;
         }
-        $l1 = abs($dividend); $l2 = abs($divisor);
+        $l1 = abs($dividend);
+        $l2 = abs($divisor);
         $sol = 0;
-        while($l1 >= $l2){
-            $x = $l2; $y = 1;
-            while($l1 >= $x){
-                $l1-=$x;
-                $sol+=$y;
-                $y+=$y;
-                $x+=$x;
+        while ($l1 >= $l2) {
+            $x = $l2;
+            $y = 1;
+            while ($l1 >= $x) {
+                $l1 -= $x;
+                $sol += $y;
+                $y += $y;
+                $x += $x;
             }
         }
-        if ($dividend > 0 && $divisor < 0 || $dividend<0 && $divisor>0) $sol = -$sol;
+        if ($dividend > 0 && $divisor < 0 || $dividend < 0 && $divisor > 0) $sol = -$sol;
         return $sol;
     }
 }

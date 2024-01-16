@@ -1,3 +1,5 @@
+<?php
+
 class Solution {
 
     /**
@@ -23,7 +25,7 @@ class Solution {
         return substr($strs[0], 0, intval(($low + $high) / 2));
     }
 
-    function isCommonPrefix($strs, $len){
+    function isCommonPrefix($strs, $len) {
         $str1 = substr($strs[0], 0, $len);
         for ($i = 1; $i < count($strs); $i++) {
             if (!self::startsWith($strs[$i], $str1)) {
@@ -32,7 +34,7 @@ class Solution {
         }
         return true;
     }
-    
+
     function startsWith($haystack, $needle) {
         return strncmp($haystack, $needle, strlen($needle)) === 0;
     }

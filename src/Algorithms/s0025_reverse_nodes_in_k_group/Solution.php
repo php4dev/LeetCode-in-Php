@@ -1,3 +1,5 @@
+<?php
+
 /**
  * Definition for a singly-linked list.
  * class ListNode {
@@ -14,7 +16,7 @@ class Solution {
      * @return ListNode
      */
     function reverseKGroup($head, $k) {
-        if($head==null || $k<2){
+        if ($head == null || $k < 2) {
             return $head;
         }
 
@@ -22,17 +24,17 @@ class Solution {
         $curr = $head;
         $prev = null;
         $count = 0;
-        
-        while($count<$k && $curr!=null){
+
+        while ($count < $k && $curr != null) {
             $temp = $curr->next;
             $curr->next = $prev;
             $prev = $curr;
             $curr = $temp;
             $count++;
         }
-        
-        if($count<$k){
-            while($count!=0){
+
+        if ($count < $k) {
+            while ($count != 0) {
                 $temp = $prev->next;
                 $prev->next = $curr;
                 $curr = $prev;
@@ -41,9 +43,9 @@ class Solution {
             }
             return $curr;
         }
-        
-        $head->next = self::reverseKGroup($curr,$k);
-        
+
+        $head->next = self::reverseKGroup($curr, $k);
+
         return $prev;
     }
 }

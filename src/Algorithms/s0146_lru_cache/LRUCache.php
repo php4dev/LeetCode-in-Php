@@ -1,8 +1,11 @@
-class Node{
+<?php
+
+class Node {
     var $key;
     var $val;
     var $prev;
     var $next;
+
     function __construct($key, $val) {
         $this->key = $key;
         $this->val = $val;
@@ -24,7 +27,7 @@ class LRUCache {
         $this->tail->prev = $this->head;
         $this->map = [];
     }
-  
+
     /**
      * @param Integer $key
      * @return Integer
@@ -38,7 +41,7 @@ class LRUCache {
         }
         return -1;
     }
-  
+
     /**
      * @param Integer $key
      * @param Integer $value
@@ -64,12 +67,12 @@ class LRUCache {
             $this->currentCapacity++;
         }
     }
-    
+
     function removeNode($node) {
         $node->prev->next = $node->next;
         $node->next->prev = $node->prev;
     }
-    
+
     function addToTail($node) {
         $this->tail->prev->next = $node;
         $node->prev = $this->tail->prev;

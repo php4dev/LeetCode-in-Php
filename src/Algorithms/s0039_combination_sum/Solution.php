@@ -1,3 +1,5 @@
+<?php
+
 class Solution {
 
     public function __construct() {
@@ -17,13 +19,13 @@ class Solution {
         self::search($target, $temp, 0);
         return $this->sol;
     }
-    
-    function search($target, $list, $start){
+
+    function search($target, $list, $start) {
         if ($target == 0) {
-			array_push($this->sol, $list);
-			return;
-		}
-        for ($i = $start; $i < count($this->nums); $i++){
+            array_push($this->sol, $list);
+            return;
+        }
+        for ($i = $start; $i < count($this->nums); $i++) {
             if ($this->nums[$i] > $target) break;
             else {
                 array_push($list, $this->nums[$i]);

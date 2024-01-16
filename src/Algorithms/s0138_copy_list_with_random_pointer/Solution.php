@@ -1,3 +1,5 @@
+<?php
+
 /*
 // Definition for a Node.
 class Node {
@@ -15,6 +17,7 @@ class Node {
     }
 }
 */
+
 class Solution {
 
     /**
@@ -22,50 +25,50 @@ class Solution {
      * @return Node
      */
     function copyRandomList($head) {
-      $iter = $head;
-      $next;
+        $iter = $head;
+        $next;
 
-      // First round: make copy of each node,
-      // and link them together side-by-side in a single list.
-      while ($iter != null) {
-        $next = $iter->next;
+        // First round: make copy of each node,
+        // and link them together side-by-side in a single list.
+        while ($iter != null) {
+            $next = $iter->next;
 
-        $copy = new Node($iter->val, null, null);
-        $iter->next = $copy;
-        $copy->next = $next;
+            $copy = new Node($iter->val, null, null);
+            $iter->next = $copy;
+            $copy->next = $next;
 
-        $iter = $next;
-      }
-
-      // Second round: assign random pointers for the copy nodes.
-      $iter = $head;
-      while ($iter != null) {
-        if ($iter->random != null) {
-          $iter->next->random = $iter->random->next;
+            $iter = $next;
         }
-        $iter = $iter->next->next;
-      }
 
-      // Third round: restore the original list, and extract the copy list.
-      $iter = $head;
-      $pseudoHead = new Node(0, null, null);
-      $copy;
-      $copyIter = $pseudoHead;
+        // Second round: assign random pointers for the copy nodes.
+        $iter = $head;
+        while ($iter != null) {
+            if ($iter->random != null) {
+                $iter->next->random = $iter->random->next;
+            }
+            $iter = $iter->next->next;
+        }
 
-      while ($iter != null) {
-        $next = $iter->next->next;
+        // Third round: restore the original list, and extract the copy list.
+        $iter = $head;
+        $pseudoHead = new Node(0, null, null);
+        $copy;
+        $copyIter = $pseudoHead;
 
-        // extract the copy
-        $copy = $iter->next;
-        $copyIter->next = $copy;
-        $copyIter = $copy;
+        while ($iter != null) {
+            $next = $iter->next->next;
 
-        // restore the original list
-        $iter->next = $next;
+            // extract the copy
+            $copy = $iter->next;
+            $copyIter->next = $copy;
+            $copyIter = $copy;
 
-        $iter = $next;
-      }
+            // restore the original list
+            $iter->next = $next;
 
-      return $pseudoHead->next;
+            $iter = $next;
+        }
+
+        return $pseudoHead->next;
     }
 }

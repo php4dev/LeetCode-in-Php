@@ -1,3 +1,5 @@
+<?php
+
 /**
  * Definition for a singly-linked list.
  * class ListNode {
@@ -13,14 +15,14 @@ class Solution {
      * @return ListNode
      */
     function deleteDuplicates($head) {
-        if($head==null || $head->next == null) return $head;
+        if ($head == null || $head->next == null) return $head;
         $prev = $head;
         $node = $head->next;
-        while( $node!= null){
-            if($node->val != $prev->val){
+        while ($node != null) {
+            if ($node->val != $prev->val) {
                 $prev = $node;
                 $node = $node->next;
-            }else{
+            } else {
                 $prev->next = $node->next;
                 $node = $node->next;
             }

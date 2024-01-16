@@ -1,3 +1,5 @@
+<?php
+
 class Solution {
 
     /**
@@ -6,6 +8,6 @@ class Solution {
      */
     function majorityElement($nums) {
         sort($nums);
-        return $nums[intval(count($nums)/2)];
+        return $nums[intval(count($nums) / 2)];
     }
 }

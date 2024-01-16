@@ -1,3 +1,5 @@
+<?php
+
 /**
  * Definition for a binary tree node.
  * class TreeNode {
@@ -14,7 +16,7 @@ class Solution {
      * @return TreeNode[]
      */
     function generateTrees($n) {
-       if ($n == 0) {
+        if ($n == 0) {
             return [];
         }
         $results = self::helper(1, $n);

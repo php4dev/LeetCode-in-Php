@@ -1,3 +1,5 @@
+<?php
+
 class Solution {
 
     /**
@@ -15,8 +17,8 @@ class Solution {
         }
         $sb = "";
         for ($i = 1; $i <= $n; ++$i) {
-            $mod = intval($mod / ($n-$i+1));
-            $idx = intval($k/$mod);
+            $mod = intval($mod / ($n - $i + 1));
+            $idx = intval($k / $mod);
             $sb .= array_splice($list, $idx, 1)[0];
             $k = $k % $mod;
         }

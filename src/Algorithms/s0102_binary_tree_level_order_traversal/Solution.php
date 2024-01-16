@@ -1,3 +1,5 @@
+<?php
+
 /**
  * Definition for a binary tree node.
  * class TreeNode {
@@ -14,23 +16,23 @@ class Solution {
      * @return Integer[][]
      */
     function levelOrder($root) {
-      $lists=[];
-      self::levelOrderTraverse($root,0,$lists);
-      return $lists;
+        $lists = [];
+        self::levelOrderTraverse($root, 0, $lists);
+        return $lists;
     }
 
-    function levelOrderTraverse($root,$depth,&$lists) {
-        if($root==null){
-            return ;
+    function levelOrderTraverse($root, $depth, &$lists) {
+        if ($root == null) {
+            return;
         }
-        if(count($lists)<=$depth){
+        if (count($lists) <= $depth) {
             array_push($lists, []);
             array_push($lists[$depth], $root->val);
-        }else{
+        } else {
             array_push($lists[$depth], $root->val);
         }
 
-        self::levelOrderTraverse($root->left,$depth+1,$lists);
-        self::levelOrderTraverse($root->right,$depth+1,$lists);
+        self::levelOrderTraverse($root->left, $depth + 1, $lists);
+        self::levelOrderTraverse($root->right, $depth + 1, $lists);
     }
 }

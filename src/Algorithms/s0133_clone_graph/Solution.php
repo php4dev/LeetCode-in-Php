@@ -1,3 +1,5 @@
+<?php
+
 /*
 // Definition for a Node.
 class Node {
@@ -12,6 +14,7 @@ class Node {
     }
 }
 */
+
 class Solution {
 
     /**
@@ -22,7 +25,7 @@ class Solution {
         $seen = [];
         return self::cloneHelper($node, $seen);
     }
-        
+
     function cloneHelper(&$origNode, &$seen) {
         if ($origNode == null)
             return null;

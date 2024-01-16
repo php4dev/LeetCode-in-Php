@@ -1,3 +1,5 @@
+<?php
+
 class Solution {
 
     var $list = [];
@@ -22,6 +24,6 @@ class Solution {
      */
     function generateParenthesis($n) {
         self::internal("", $n, $n);
-        return $this->list;        
+        return $this->list;
     }
 }

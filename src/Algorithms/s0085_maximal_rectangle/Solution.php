@@ -1,3 +1,5 @@
+<?php
+
 class Solution {
 
     /**
@@ -13,26 +15,29 @@ class Solution {
                 }
             }
         }
-        
+
         return $maxSize;
     }
-    
+
     function rectangleSize(&$matrix, $row, $col) {
-        $maxSize; $rowSize; $size;
-        $i = $row + 1; $j = $col + 1; 
+        $maxSize;
+        $rowSize;
+        $size;
+        $i = $row + 1;
+        $j = $col + 1;
         $maxSize = $rowSize = $size = 1;
-        
+
         while ($i < count($matrix) && $matrix[$i++][$col] == '1') {
             $rowSize++;
         }
 
         $maxSize = $size = $rowSize;
-        
+
         while ($j < count($matrix[0])) {
-            if ($matrix[$row][$j] == '0' ) {
+            if ($matrix[$row][$j] == '0') {
                 break;
             }
-            
+
             for ($k = $row; $k < $row + $rowSize; $k++) {
                 if ($matrix[$k][$j] == '0') { //if a '0' is found, reshape the rectangle
                     $oldrowSize = $rowSize;
@@ -40,12 +45,12 @@ class Solution {
                     $size -= ($j - $col) * ($oldrowSize - $rowSize);
                 }
             }
-            
+
             $size += $rowSize;
             $maxSize = max($maxSize, $size);
             $j++;
         }
-        
+
         return $maxSize;
     }
 }

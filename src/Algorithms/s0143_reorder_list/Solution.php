@@ -1,3 +1,5 @@
+<?php
+
 /**
  * Definition for a singly-linked list.
  * class ListNode {
@@ -13,27 +15,27 @@ class Solution {
      * @return NULL
      */
     function reorderList($head) {
-        if($head == null) return;
+        if ($head == null) return;
         $slow = $head;
         $fast = $head;
 
-        while($fast != null && $fast->next != null){
+        while ($fast != null && $fast->next != null) {
             $fast = $fast->next->next;
             $slow = $slow->next;
         }
-        
+
         $next = null;
         $curr = $slow;
         $prev = null;
-        while($curr != null){
+        while ($curr != null) {
             $next = $curr->next;
             $curr->next = $prev;
             $prev = $curr;
             $curr = $next;
         }
-        
+
         $temp;
-        while($prev != null && $head->next != null){
+        while ($prev != null && $head->next != null) {
             $temp = $head->next;
             $head->next = $prev;
             $head = $temp;

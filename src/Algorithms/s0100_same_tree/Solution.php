@@ -1,3 +1,5 @@
+<?php
+
 /**
  * Definition for a binary tree node.
  * class TreeNode {
@@ -15,12 +17,12 @@ class Solution {
      * @return Boolean
      */
     function isSameTree($p, $q) {
-        if($p == null && $q == null)
+        if ($p == null && $q == null)
             return true;
-        
-        if($p == null || $q == null)
+
+        if ($p == null || $q == null)
             return false;
-        
-        return ($p->val == $q->val) && self::isSameTree($p->left, $q->left) && self::isSameTree($p->right,$q->right);   
+
+        return ($p->val == $q->val) && self::isSameTree($p->left, $q->left) && self::isSameTree($p->right, $q->right);
     }
 }

@@ -1,3 +1,5 @@
+<?php
+
 class Solution {
     public function __construct() {
         $this->row = array_fill(0, 9, array_fill(0, 9, false));
@@ -23,14 +25,16 @@ class Solution {
         self::place(0, $board);
         return;
     }
+
     function place($n, &$board) {
         if ($n == 81) {
             // board = g;
             $this->found = true;
             return;
         }
-        
-        $i = intval($n / 9); $j = $n % 9;
+
+        $i = intval($n / 9);
+        $j = $n % 9;
         $index = intval(($i / 3)) * 3 + intval(($j / 3)) % 3;
         if ($board[$i][$j] == '.') {
             for ($c = 0; $c < 9; ++$c) {
@@ -39,21 +43,20 @@ class Solution {
                     $this->col[$j][$c] = true;
                     $this->grid[$index][$c] = true;
                     $board[$i][$j] = chr($c + ord('1'));
-                    
+
                     self::place($n + 1, $board);
-                    
+
                     if ($this->found)
                         return;
-                    
+
                     $board[$i][$j] = '.';
                     $this->row[$i][$c] = false;
                     $this->col[$j][$c] = false;
                     $this->grid[$index][$c] = false;
-                    
+
                 }
             }
-        }
-        else 
+        } else
             self::place($n + 1, $board);
         return;
     }

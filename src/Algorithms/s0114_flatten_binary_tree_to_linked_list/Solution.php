@@ -1,3 +1,5 @@
+<?php
+
 /**
  * Definition for a binary tree node.
  * class TreeNode {
@@ -14,17 +16,17 @@ class Solution {
      * @return NULL
      */
     function flatten($root) {
-        if($root==null){
+        if ($root == null) {
             return;
         }
         self::flatten($root->left);
         self::flatten($root->right);
-        $left=$root->left;
-        $right=$root->right;
+        $left = $root->left;
+        $right = $root->right;
         $root->left = null;
         $root->right = $left;
-        $temp=$root;
-        while($temp->right != null){
+        $temp = $root;
+        while ($temp->right != null) {
             $temp = $temp->right;
         }
         $temp->right = $right;

@@ -1,3 +1,5 @@
+<?php
+
 /**
  * Definition for a binary tree node.
  * class TreeNode {
@@ -15,16 +17,14 @@ class Solution {
      * @return Boolean
      */
     function hasPathSum($root, $sum) {
-        $s=0;
-        return self::hasPathSumUtil($root,$sum,$s);
+        $s = 0;
+        return self::hasPathSumUtil($root, $sum, $s);
     }
 
-    function hasPathSumUtil($root, $sum, $s)
-    {
-        if($root == null)
+    function hasPathSumUtil($root, $sum, $s) {
+        if ($root == null)
             return false;
-        if($root->left==null && $root->right==null)
-        {
+        if ($root->left == null && $root->right == null) {
             $s = $s + $root->val;
             if ($s == $sum)
                 return true;
@@ -34,7 +34,7 @@ class Solution {
         $left = self::hasPathSumUtil($root->left, $sum, $s);
         $right = self::hasPathSumUtil($root->right, $sum, $s);
 
-        if($left || $right)
+        if ($left || $right)
             return true;
 
         return false;

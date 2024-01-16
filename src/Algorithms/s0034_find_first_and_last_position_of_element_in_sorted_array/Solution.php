@@ -1,3 +1,5 @@
+<?php
+
 class Solution {
 
     /**
@@ -9,9 +11,9 @@ class Solution {
         $n = count($nums);
         $res = array_fill(0, 2, 0);
         $beg = 0;
-        $end = $n-1;
+        $end = $n - 1;
         while ($beg <= $end) {
-            $mid = $beg + intval(($end-$beg)/2);
+            $mid = $beg + intval(($end - $beg) / 2);
             if ($nums[$mid] < $target) {
                 $beg = $mid + 1;
             } else {
@@ -19,11 +21,11 @@ class Solution {
             }
         }
         $res[0] = ($beg >= $n || $nums[$beg] != $target) ? -1 : $beg;
-        
+
         $beg = 0;
-        $end = $n-1;
+        $end = $n - 1;
         while ($beg <= $end) {
-            $mid = $beg + intval(($end-$beg)/2);
+            $mid = $beg + intval(($end - $beg) / 2);
             if ($nums[$mid] <= $target) {
                 $beg = $mid + 1;
             } else {

@@ -1,3 +1,5 @@
+<?php
+
 /**
  * Definition for an interval.
  * class Interval {
@@ -18,27 +20,26 @@ class Solution {
      */
     function insert($intervals, $newInterval) {
         $res = [];
-        
+
         $s = $newInterval->start;
         $e = $newInterval->end;
-        
-        foreach($intervals as $i) {
-            if($i->start > $e) {
-                array_push($res, new Interval($s,$e));
+
+        foreach ($intervals as $i) {
+            if ($i->start > $e) {
+                array_push($res, new Interval($s, $e));
                 $s = $i->start;
                 $e = $i->end;
             }
-            
-            if($s <= $i->end) {
+
+            if ($s <= $i->end) {
                 $s = min($s, $i->start);
                 $e = max($e, $i->end);
-            }
-            else {
+            } else {
                 array_push($res, $i);
             }
         }
-        
-        array_push($res, new Interval($s,$e));
-        return $res; 
+
+        array_push($res, new Interval($s, $e));
+        return $res;
     }
 }

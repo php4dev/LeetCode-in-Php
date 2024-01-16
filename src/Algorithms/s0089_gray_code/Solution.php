@@ -1,3 +1,5 @@
+<?php
+
 class Solution {
 
     /**
@@ -9,7 +11,7 @@ class Solution {
         self::subGray($n, $ans);
         return $ans;
     }
-    
+
     function subGray($n, &$ans) {
         if ($n == 0) {
             array_push($ans, 0);

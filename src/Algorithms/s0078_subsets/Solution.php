@@ -1,3 +1,5 @@
+<?php
+
 class Solution {
 
     /**
@@ -5,7 +7,7 @@ class Solution {
      * @return Integer[][]
      */
     function subsets($nums) {
-        $count = intval(pow(2,count($nums)));
+        $count = intval(pow(2, count($nums)));
         $result = [];
         for ($i = 0; $i < $count; $i++) {
             $list = [];
